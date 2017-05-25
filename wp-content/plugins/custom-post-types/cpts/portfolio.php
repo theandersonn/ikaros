@@ -28,7 +28,7 @@ function btwp_custom_post_portfolio(){
 		'menu_icon' 		=> 'dashicons-images-alt2', // https://developer.wordpress.org/resource/dashicons/		
 		'menu_position'		=> 5,
 		'show_in_nav_menus' => true,
-		'supports' 			=> array ('title', 'editor', 'thumbnail')
+		'supports' 			=> array ('title', 'thumbnail')
 	);
 
 	register_post_type('portfolio', $args);
