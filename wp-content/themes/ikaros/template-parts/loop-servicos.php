@@ -19,7 +19,6 @@
 		?>
 
 		<?php foreach( $servicos_post_cat as $post ) : setup_postdata( $post ); ?>
-
     		<div class="tab-thumb">
     			<?php echo odin_thumbnail( 400, 300, get_the_title(), true, 'thumb' ); ?>
     		</div>
@@ -28,7 +27,6 @@
 	    		<h2 class="title"><?php the_title(); ?></h2>
 	    		<?php the_content(); ?> 						
 			</div>
-
 		<?php endforeach; ?> 
 	</div>
     
@@ -41,7 +39,6 @@
 		?>
 
 		<?php foreach( $servicos_post_cat as $post ) : setup_postdata( $post ); ?>
-
     		<div class="tab-thumb">
     			<?php echo odin_thumbnail( 400, 300, get_the_title(), true, 'thumb' ); ?>
     		</div>
@@ -63,7 +60,6 @@
 		?>
 
 		<?php foreach( $servicos_post_cat as $post ) : setup_postdata( $post ); ?>
-
     		<div class="tab-thumb">
     			<?php echo odin_thumbnail( 400, 300, get_the_title(), true, 'thumb' ); ?>
     		</div>
@@ -72,7 +68,6 @@
 	    		<h2 class="title"><?php the_title(); ?></h2>
 	    		<?php the_content(); ?> 						
 			</div>
-
 		<?php endforeach; ?> 
     </div>
 </div>

@@ -15,5 +15,13 @@ function btwp_updated_messages ($messages){
 		7 => 'Servico Salvo.'
 	);
 
+	$messages['portfolio'] = array(
+		0 => '',
+		1 => 'Item Atualizado. <a href="'. esc_url( get_permalink( $post_ID ) ) .'">Visualizar Item</a>',
+		4 => 'Item Atualizado.',
+		6 => 'Item Publicado. <a href="'. esc_url( get_permalink( $post_ID ) ) .'">Visualizar Item</a>',
+		7 => 'Item Salvo.'
+	);	
+
 	return $messages;
 }
