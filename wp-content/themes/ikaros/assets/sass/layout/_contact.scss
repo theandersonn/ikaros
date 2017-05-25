@@ -5,7 +5,8 @@
 	@include fontsize(26);
 }
 
-.description-page {
+.description-page,
+p {
 	margin-bottom: 3rem;	
 	font-family: $aller-lg-rg;
 	line-height: 2rem;			

@@ -4256,7 +4256,8 @@ select[multiple].input-lg,
   font-size: 26px;
   font-size: 2.6rem; }
 
-.description-page {
+.description-page,
+p {
   margin-bottom: 3rem;
   font-family: "aller_lightregular";
   line-height: 2rem;
