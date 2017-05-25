@@ -135,7 +135,7 @@
 		@include fontsize(17);		
 	}
 
-	> .description {
+	p {
 		font-family: $droid-rg;
 		margin-bottom: 2.5rem;
 		@include fontsize(13);
