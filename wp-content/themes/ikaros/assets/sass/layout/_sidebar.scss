@@ -10,18 +10,20 @@
 }
 
 .sidebar-content {
-	> .title {
+	.widgettitle,
+	.title {
 		color: #555;
 		font-family: $aller-bd;
 		text-transform: uppercase;
 		@include fontsize(16);		
 	}
 
-	> .description {
+	.description,
+	.textwidget {
 		color: #555;
 		@include fontsize(14);
 
-		.meta {
+		span {
 			color: #6b99b6;
 			font-weight: 700;
 		}
