@@ -32,13 +32,12 @@
 				<?php echo odin_thumbnail( 610, 272, get_the_title(), true, 'thumb' ); ?>
 
 				<?php the_content(); ?>
-
 			<?php endwhile; wp_reset_postdata();?> 				
 		
 			<hr class="divider-section">
 			
 			<div class="related-posts">
-				<h3 class="title">Related Posts</h3>
+				<h3 class="title">Posts Recentes</h3>
 
 				<ul class="related-ul">
 					<li class="related-item"><a href="javascript:;"><img class="thumb" src="assets/images/general/thumb-related-posts-1.jpg"></a></li>
@@ -51,32 +50,26 @@
 
 		<aside class="sidebar-box">
 			<div class="sidebar-content">
-				<h2 class="title">Popular Posts</h2>
+				<h2 class="title">Posts Populares</h2>
 
 				<ul class="sidebar-posts">
-					<li class="sidebar-item">
-						<img class="thumb" src="assets/images/general/latest-staff-thumb-6.png">
-						<div class="title-box">
-							<h4 class="title"><a class="link" href="javascript:;">Vestibum Malesuada Etiam Magna Malesuada Vestibum</a></h4>
-							<time class="time" datetime="2014-11-14">14 Nov, 2014</time>
-						</div>
-					</li>
-
-					<li class="sidebar-item">
-						<img class="thumb" src="assets/images/general/latest-staff-thumb-6.png">
-						<div class="title-box">
-							<h4 class="title"><a class="link" href="javascript:;">Vestibum Malesuada Etiam Magna Malesuada Vestibum</a></h4>
-							<time class="time" datetime="2014-11-14">14 Nov, 2014</time>
-						</div>
-					</li>
-
-					<li class="sidebar-item">
-						<img class="thumb" src="assets/images/general/latest-staff-thumb-6.png">
-						<div class="title-box">
-							<h4 class="title"><a class="link" href="javascript:;">Vestibum Malesuada Etiam Magna Malesuada Vestibum</a></h4>
-							<time class="time" datetime="2014-11-14">14 Nov, 2014</time>
-						</div>
-					</li>																					
+		            <?php
+		                $args = new WP_Query(
+		                  array(
+		                  	'post__not_in' => array( $post->ID ),
+		                    'posts_per_page' => 3                             
+		                  )
+		                );
+		            ?>					
+					<?php if( $args->have_posts() ) : while( $args->have_posts() ) : $args->the_post(); ?>					
+						<li class="sidebar-item">
+							<?php echo odin_thumbnail( 70, 70, get_the_title(), true, 'thumb' ); ?>
+							<div class="title-box">
+								<h4 class="title"><a class="link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+								<time class="time" datetime="2014-11-14"><?php echo get_the_date(); ?></time>
+							</div>
+						</li>
+					<?php endwhile; endif; wp_reset_postdata(); ?>																							
 				</ul>					
 			</div>	
 
