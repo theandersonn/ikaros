@@ -35,7 +35,7 @@ function btwp_custom_post_servicos(){
 }
 
 /*--------------------------------------------------------------
-	REGISTER TAXONOMIES -> PRODUTOS - CATEGORY
+	REGISTER TAXONOMIES -> SERVIÇOS - CATEGORY
 --------------------------------------------------------------*/
 add_action('init', 'btwp_taxonomies_servicos_category');
 
