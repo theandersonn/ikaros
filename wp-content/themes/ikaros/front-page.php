@@ -18,16 +18,19 @@
 	<!-- ### Latest Projects ### -->
 	<hr class="divider-section">
 	<section class="page-section">
-		<h2 class="title">Latest Staff of Our Projects</h2>
+		<h2 class="title">Últimos projetos de nossa equipe</h2>
 		<p class="description">ulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
 
 		<ul class="projects-ul">
-			<li class="projects-item"><a href="javascript:;"><img class="img-responsive" src="<?php bloginfo( 'template_url' ); ?>/assets/images/general/thumb-project-home-1.jpg"></a></li>
-			<li class="projects-item"><a href="javascript:;"><img class="img-responsive" src="<?php bloginfo( 'template_url' ); ?>/assets/images/general/thumb-project-home-2.jpg"></a></li>
-			<li class="projects-item"><a href="javascript:;"><img class="img-responsive" src="<?php bloginfo( 'template_url' ); ?>/assets/images/general/thumb-project-home-3.jpg"></a></li>
-			<li class="projects-item"><a href="javascript:;"><img class="img-responsive" src="<?php bloginfo( 'template_url' ); ?>/assets/images/general/thumb-project-home-4.jpg"></a></li>
-			<li class="projects-item"><a href="javascript:;"><img class="img-responsive" src="<?php bloginfo( 'template_url' ); ?>/assets/images/general/thumb-project-home-5.jpg"></a></li>
-			<li class="projects-item"><a href="javascript:;"><img class="img-responsive" src="<?php bloginfo( 'template_url' ); ?>/assets/images/general/thumb-project-home-6.jpg"></a></li>
+			<?php 					
+				// pega título e descrição da seção
+				$argsPortfolio = array("post_type"=>"portfolio", "posts_per_page"=>"6");
+				$Portfolio_post_cat = get_posts( $argsPortfolio ); 
+			?>
+
+			<?php foreach( $Portfolio_post_cat as $post ) : setup_postdata( $post ); ?>			
+				<li class="projects-item"><a href="javascript:;"><?php echo odin_thumbnail( 312, 250, get_the_title(), true ); ?></a></li>
+			<?php endforeach; ?>
 		</ul>
 	</section>
 

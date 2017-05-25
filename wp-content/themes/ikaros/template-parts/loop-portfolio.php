@@ -15,11 +15,11 @@
 		<ul class="projects-ul">
 			<?php 					
 				// pega título e descrição da seção
-				$argsServicos = array("post_type"=>"portfolio", "taxonomy" => "portfolio_category", "term" => "web-design",  "posts_per_page"=>"6");
-				$servicos_post_cat = get_posts( $argsServicos ); 
+				$argsPortfolio = array("post_type"=>"portfolio", "taxonomy" => "portfolio_category", "term" => "web-design",  "posts_per_page"=>"6");
+				$Portfolio_post_cat = get_posts( $argsPortfolio ); 
 			?>
 
-			<?php foreach( $servicos_post_cat as $post ) : setup_postdata( $post ); ?>	
+			<?php foreach( $Portfolio_post_cat as $post ) : setup_postdata( $post ); ?>	
 				<li class="projects-item">
 					<a href="javascript:;">	
 						<?php echo odin_thumbnail( 312, 250, get_the_title(), true ); ?>
@@ -34,11 +34,11 @@
 		<ul class="projects-ul">
 			<?php 					
 				// pega título e descrição da seção
-				$argsServicos = array("post_type"=>"portfolio", "taxonomy" => "portfolio_category", "term" => "fotografia",  "posts_per_page"=>"6");
-				$servicos_post_cat = get_posts( $argsServicos ); 
+				$argsPortfolio = array("post_type"=>"portfolio", "taxonomy" => "portfolio_category", "term" => "fotografia",  "posts_per_page"=>"6");
+				$Portfolio_post_cat = get_posts( $argsPortfolio ); 
 			?>
 
-			<?php foreach( $servicos_post_cat as $post ) : setup_postdata( $post ); ?>	
+			<?php foreach( $Portfolio_post_cat as $post ) : setup_postdata( $post ); ?>	
 				<li class="projects-item">
 					<a href="javascript:;">	
 						<?php echo odin_thumbnail( 312, 250, get_the_title(), true ); ?>
@@ -53,11 +53,11 @@
 		<ul class="projects-ul">
 			<?php 					
 				// pega título e descrição da seção
-				$argsServicos = array("post_type"=>"portfolio", "taxonomy" => "portfolio_category", "term" => "grafico",  "posts_per_page"=>"6");
-				$servicos_post_cat = get_posts( $argsServicos ); 
+				$argsPortfolio = array("post_type"=>"portfolio", "taxonomy" => "portfolio_category", "term" => "grafico",  "posts_per_page"=>"6");
+				$Portfolio_post_cat = get_posts( $argsPortfolio ); 
 			?>
 
-			<?php foreach( $servicos_post_cat as $post ) : setup_postdata( $post ); ?>	
+			<?php foreach( $Portfolio_post_cat as $post ) : setup_postdata( $post ); ?>	
 				<li class="projects-item">
 					<a href="javascript:;">	
 						<?php echo odin_thumbnail( 312, 250, get_the_title(), true ); ?>
