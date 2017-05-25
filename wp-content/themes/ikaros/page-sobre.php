@@ -4,7 +4,7 @@
 	<section class="page-section">
 		<?php while( have_posts() ) : the_post(); ?>
 			<h2 class="title"><?php the_title(); ?></h2>
-			<p class="description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+			<p class="description"><?php the_field( 'page_description' ); ?></p>
 
 			<div class="page-content">
 				<?php the_content(); ?>				
