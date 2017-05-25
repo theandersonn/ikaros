@@ -90,11 +90,7 @@
 			<hr class="divider-section">
 
 			<div class="sidebar-content">
-				<h2 class="title">Others infos</h2>
-
-				<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, consequuntur.</p>
-
-				<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus eius doloribus, corrupti. Labore accusantium sapiente dignissimos nesciunt! Quam, nostrum, voluptates. Perferendis minus, ex. Debitis reprehenderit impedit nam, asperiores doloribus aspernatur.</p>
+				<?php dynamic_sidebar( 'barra-contatos' ); ?>
 			</div>				
 		</aside>	    
 	</section>	
