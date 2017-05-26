@@ -130,16 +130,13 @@
 	<!-- ### our customers ### -->
 	<hr class="divider-section">
 	<section class="page-section">
-		<h2 class="title">Our Customers</h2>
+		<h2 class="title">Nossos Clientes</h2>
 		<p class="description">Aenean lacinia bibendum nulla sed consectetur. Vivamus augue laoreet rutrum faucibus dolor auctor.</p>
 
 		<ul class="customers-box">
-			<li class="customers-item"><a href="javascript:;"><img src="<?php bloginfo( 'template_url' ); ?>/assets/images/logotypes/customers-vimeo.png" alt="Vimeo"></a></li>
-			<li class="customers-item"><a href="javascript:;"><img src="<?php bloginfo( 'template_url' ); ?>/assets/images/logotypes/customers-apple.png" alt="Apple"></a></li>
-			<li class="customers-item"><a href="javascript:;"><img src="<?php bloginfo( 'template_url' ); ?>/assets/images/logotypes/customers-mercedez.png" alt="Mercedez"></a></li>
-			<li class="customers-item"><a href="javascript:;"><img src="<?php bloginfo( 'template_url' ); ?>/assets/images/logotypes/customers-wb.png" alt="Warner"></a></li>
-			<li class="customers-item"><a href="javascript:;"><img src="<?php bloginfo( 'template_url' ); ?>/assets/images/logotypes/customers-mt.png" alt="MT"></a></li>
-			<li class="customers-item"><a href="javascript:;"><img src="<?php bloginfo( 'template_url' ); ?>/assets/images/logotypes/customers-bmw.png" alt="BMW"></a></li>
+			<?php while ( have_rows('clientes_lista') ) : the_row(); ?>
+				<li class="customers-item"><a href="javascript:;"><img src="<?php the_sub_field( 'cliente_logomarca' ); ?>" alt="Vimeo"></a></li>
+			<?php endwhile; wp_reset_postdata();?> 	
 		</ul>
 	</section>		
 </main> 
