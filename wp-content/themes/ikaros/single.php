@@ -35,18 +35,27 @@
 			<?php endwhile; wp_reset_postdata();?> 				
 		
 			<hr class="divider-section">
-			
+	
 			<div class="related-posts">
 				<h3 class="title">Posts Recentes</h3>
 
 				<ul class="related-ul">
-					<li class="related-item"><a href="javascript:;"><img class="thumb" src="assets/images/general/thumb-related-posts-1.jpg"></a></li>
-					<li class="related-item"><a href="javascript:;"><img class="thumb" src="assets/images/general/thumb-related-posts-1.jpg"></a></li>
-					<li class="related-item"><a href="javascript:;"><img class="thumb" src="assets/images/general/thumb-related-posts-1.jpg"></a></li>
-					<li class="related-item"><a href="javascript:;"><img class="thumb" src="assets/images/general/thumb-related-posts-1.jpg"></a></li>
+					<?php 
+    					$args = new WP_Query(
+    						array(	
+								'post_in'  			=> get_the_tag_list(),
+								'posts_per_page' 	=> 4
+    						)
+    					);
+						
+						while ( $args->have_posts() ) : $args->the_post();
+					?>
+						<li class="related-item"><a href="<?php the_permalink(); ?>"><?php echo odin_thumbnail( 150, 110, get_the_title(), true, 'thumb' ); ?></a></li>
+					<?php endwhile; wp_reset_postdata(); ?>	
 				</ul>
 			</div>
 		</article>
+
 
 		<aside class="sidebar-box">
 			<div class="sidebar-content">
