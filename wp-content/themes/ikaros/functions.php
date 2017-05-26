@@ -17,3 +17,6 @@ require get_template_directory() . '/classes/odin-thumbnail-resizer.php';
 
 // Cria a action Init e Registra Menus
 require get_template_directory() . '/inc/register-menus.php';
+
+// Remove lixo do head
+require get_template_directory() . '/inc/remove-junk-header.php';
