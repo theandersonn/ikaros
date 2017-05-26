@@ -37,93 +37,36 @@
 	<!-- ### Latest Blog ### -->
 	<hr class="divider-section">
 	<section class="page-section">
-		<h2 class="title">Latest Blog</h2>
+		<h2 class="title">Últimas no Blog</h2>
 		<p class="description">ulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
 
 		<div class="container">
-			<article class="latest-box">
-				<div class="date-blog">
-					<div class="date-circle">
-						<span class="day">23</span>
-						<span class="month">jan</span>
-					</div>
-				</div>
-				
-				<div class="latest-content">
-					<h2 class="title">Aenean Adipiscing Etiam Vestibulum</h2>
-					<p class="description"><a class="link" href="javascript:;">Etiam porta sem malesuada magna lorem etor mollis euismod. Cras mattis consectetur purus.</a></p>
-					
-					<ul class="tag-blog">
-						<li class="tag-item"><a class="link" href="javascript:;">Journal</a></li>
-						<li class="tag-item"><a class="link" href="javascript:;">Photography</a></li>
-						<li class="tag-item"><a class="link" href="javascript:;">Web Design</a></li>
-					</ul>
-					<span class="comments-blog">9 Comments</span>						
-				</div>
-			</article>	
+			<?php
+				$argsBlog = array("post_type"=>"post", "posts_per_page"=>"4");
+				$blog_post_cat = get_posts( $argsBlog );
+			?>
 
-			<article class="latest-box">
-				<div class="date-blog">
-					<div class="date-circle">
-						<span class="day">23</span>
-						<span class="month">jan</span>
+			<?php foreach( $blog_post_cat as $post ) : setup_postdata( $post ); ?>
+				<article class="latest-box">
+					<div class="date-blog">
+						<div class="date-circle">
+							<span class="day"><?php echo( get_the_date( 'd' ) ); ?></span>
+							<span class="month"><?php echo( get_the_date( 'M' ) ); ?></span>
+						</div>
 					</div>
-				</div>
-				
-				<div class="latest-content">
-					<h2 class="title">Aenean Adipiscing Etiam Vestibulum</h2>
-					<p class="description"><a class="link" href="javascript:;">Etiam porta sem malesuada magna lorem etor mollis euismod. Cras mattis consectetur purus.</a></p>
 					
-					<ul class="tag-blog">
-						<li class="tag-item"><a class="link" href="javascript:;">Journal</a></li>
-						<li class="tag-item"><a class="link" href="javascript:;">Photography</a></li>
-						<li class="tag-item"><a class="link" href="javascript:;">Web Design</a></li>
-					</ul>
-					<span class="comments-blog">9 Comments</span>						
-				</div>
-			</article>	
-
-			<article class="latest-box">
-				<div class="date-blog">
-					<div class="date-circle">
-						<span class="day">23</span>
-						<span class="month">jan</span>
+					<div class="latest-content">
+						<h2 class="title"><?php the_title(); ?></h2>
+						<?php $textResume = get_the_excerpt(); ?>
+						<p class="description"><a class="link" href="<?php the_permalink(); ?>"><?php echo changeTextSize( $textResume, 90 ); ?></a></p>
+						
+						<ul class="tag-blog">
+							<li class="tag-item"><a class="link" href="<?php the_permalink(); ?>"><?php the_tags(''); ?></a></li>
+						</ul>
+						<span class="comments-blog"><a href="<?php comments_link(); ?>"><?php comments_number('0 comentário', 'Um comentário', '% comentários'); ?></a></span>						
 					</div>
-				</div>
-				
-				<div class="latest-content">
-					<h2 class="title">Aenean Adipiscing Etiam Vestibulum</h2>
-					<p class="description"><a class="link" href="javascript:;">Etiam porta sem malesuada magna lorem etor mollis euismod. Cras mattis consectetur purus.</a></p>
-					
-					<ul class="tag-blog">
-						<li class="tag-item"><a class="link" href="javascript:;">Journal</a></li>
-						<li class="tag-item"><a class="link" href="javascript:;">Photography</a></li>
-						<li class="tag-item"><a class="link" href="javascript:;">Web Design</a></li>
-					</ul>
-					<span class="comments-blog">9 Comments</span>						
-				</div>
-			</article>	
-
-			<article class="latest-box">
-				<div class="date-blog">
-					<div class="date-circle">
-						<span class="day">23</span>
-						<span class="month">jan</span>
-					</div>
-				</div>
-				
-				<div class="latest-content">
-					<h2 class="title">Aenean Adipiscing Etiam Vestibulum</h2>
-					<p class="description"><a class="link" href="javascript:;">Etiam porta sem malesuada magna lorem etor mollis euismod. Cras mattis consectetur purus.</a></p>
-					
-					<ul class="tag-blog">
-						<li class="tag-item"><a class="link" href="javascript:;">Journal</a></li>
-						<li class="tag-item"><a class="link" href="javascript:;">Photography</a></li>
-						<li class="tag-item"><a class="link" href="javascript:;">Web Design</a></li>
-					</ul>
-					<span class="comments-blog">9 Comments</span>						
-				</div>
-			</article>						
+				</article>	
+			<?php endforeach; ?>					
 		</div>	
 	</section>			
 
