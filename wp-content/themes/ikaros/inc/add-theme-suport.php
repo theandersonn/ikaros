@@ -21,4 +21,3 @@ register_sidebar(
     'description' 	=> 'Exibe informações de contato'
     )
 );
-

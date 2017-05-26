@@ -2,30 +2,27 @@
 		<footer class="footer-box">
 			<div class="container">
 				<div class="footer-content">
-					<h2 class="title">popular posts</h2>
+					<h2 class="title">posts recentes</h2>
 
 					<ul class="posts-box">
-						<li class="posts-list">
-							<a class="link" href="javascript:;">Vivamus sagittis lacus vel augue laoreet rutrum dolor auctor</a>
-							<time class="meta -gray" datetime="2014-11-14">14 Nov, 2014</time>
-						</li>
+						<?php
+							$argsBlog = array("post_type"=>"post", "posts_per_page"=>"3");
+							$blog_post_cat = get_posts( $argsBlog );
+						?>
 
-						<li class="posts-list">
-							<a class="link" href="javascript:;">Vivamus sagittis lacus vel augue laoreet rutrum dolor auctor</a>
-							<time class="meta -gray" datetime="2014-11-14">14 Nov, 2014</time>
-						</li>
-
-						<li class="posts-list">
-							<a class="link" href="javascript:;">Vivamus sagittis lacus vel augue laoreet rutrum</a>
-							<time class="meta -gray" datetime="2014-11-14">14 Nov, 2014</time>
-						</li>										
+						<?php foreach( $blog_post_cat as $post ) : setup_postdata( $post ); ?>	
+							<li class="posts-list">
+								<a class="link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								<time class="meta -gray" datetime="<?php echo get_the_date(); ?>"><?php echo get_the_date(); ?></time>
+							</li>
+						<?php endforeach; wp_reset_postdata(); ?>						
 					</ul>
 				</div>
 
 				<div class="footer-content">
 					<h2 class="title">twitter</h2>
 
-					<ul class="posts-box">
+					<ul class="posts-box">					
 						<li class="posts-list -icontweet">
 							<a class="link" href="javascript:;">Vivamus sagittis lacus vel augue laoreet rutrum dolor auctor, sagittis lacus vel augue</a>
 							<span class="meta -blue"> - 21 hours ago</span>
@@ -54,12 +51,7 @@
 				<div class="footer-content">
 					<h2 class="title">contact form</h2>
 
-					<form>
-						<input type="text" class="form-custom" placeholder="your name">
-						<input type="email" class="form-custom" placeholder="your email address">
-						<textarea class="form-custom" placeholder="message" rows="6"></textarea>
-						<button type="submit" class="btn btn-primary">Submit</button>
-					</form>
+					<?php echo do_shortcode( '[contact-form-7 id="102" title="Formulário Rodapé"]' ); ?>				
 				</div>							
 			</div>
 		</footer>
