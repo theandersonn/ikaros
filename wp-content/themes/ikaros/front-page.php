@@ -4,9 +4,9 @@
 	<!-- ### carousel ### -->
 	<section class="carousel-section">
 		<ul class="owl-carousel">
-			<li class="item"><a href="javascript:;"><img src="<?php bloginfo( 'template_url' ); ?>/assets/images/banners/home-slider-1.jpg" alt="Slider"></a></li>
-			<li class="item"><a href="javascript:;"><img src="<?php bloginfo( 'template_url' ); ?>/assets/images/banners/home-slider-1.jpg" alt="Slider"></a></li>
-			<li class="item"><a href="javascript:;"><img src="<?php bloginfo( 'template_url' ); ?>/assets/images/banners/home-slider-1.jpg" alt="Slider"></a></li>
+			<?php while ( have_rows('home_slide') ) : the_row(); ?>
+				<li class="item"><a href="javascript:;"><img src="<?php the_sub_field( 'banner' ); ?>" alt="Slider"></a></li>
+			<?php endwhile; wp_reset_postdata();?> 
 		</ul>
 	</section>
 
