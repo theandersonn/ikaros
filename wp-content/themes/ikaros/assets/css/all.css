@@ -3640,16 +3640,16 @@ select[multiple].input-lg,
     .logo-box {
       line-height: 88px; } }
 
-.menu-item > .link {
+.menu-box li a {
   font-family: "allerbold";
   text-transform: uppercase;
   font-size: 12px;
   font-size: 1.2rem; }
   @media (min-width: 768px) {
-    .menu-item > .link {
+    .menu-box li a {
       line-height: 30px; } }
   @media (min-width: 960px) {
-    .menu-item > .link {
+    .menu-box li a {
       line-height: 58px;
       padding-top: 25px;
       padding-bottom: 5px; } }

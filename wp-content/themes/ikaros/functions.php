@@ -9,8 +9,11 @@ require get_template_directory() . '/inc/change-text-size.php';
 // Custom Post Thumbnail
 require get_template_directory() . '/inc/custom-post-thumbnail.php';
 
+// Carrega Scripts e Estilos
+require get_template_directory() . '/inc/insert-scripts-style.php';
+
 // Odin Thumbnail Resizer
 require get_template_directory() . '/classes/odin-thumbnail-resizer.php';
 
-// Carrega Scripts e Estilos
-require get_template_directory() . '/inc/insert-scripts-style.php';
+// Cria a action Init e Registra Menus
+require get_template_directory() . '/inc/register-menus.php';

@@ -25,18 +25,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="javascript:;"><img class="logo" src="<?php bloginfo( 'template_url' ); ?>/assets/images/logotypes/logo-ikarus.png" alt="Ikarus"></a>
+                    <a href="<?php echo site_url(); ?>"><img class="logo" src="<?php bloginfo( 'template_url' ); ?>/assets/images/logotypes/logo-ikarus.png" alt="Ikarus"></a>
                 </div><!-- end navbar-header -->
 
-                <div class="collapse navbar-collapse" id="bs-collapse-1">
-                  <ul class="menu-box">
-                    <li class="menu-item active"><a class="link" href="index.html">home</a></li>
-                    <li class="menu-item"><a class="link" href="service.html">service</a></li>
-                    <li class="menu-item"><a class="link" href="portfolio.html">portfolio</a></li>
-                    <li class="menu-item"><a class="link" href="about.html">about</a></li>
-                    <li class="menu-item"><a class="link" href="blog.html">blog</a></li>
-                    <li class="menu-item"><a class="link" href="contact.html">contact</a></li>
-                  </ul>
-                </div><!-- end navbar-collapse -->          
+                <!-- Header Navigation -->
+                <?php if (function_exists('menu_header')) { menu_header(); } ?>                         
             </div>
         </header>     
