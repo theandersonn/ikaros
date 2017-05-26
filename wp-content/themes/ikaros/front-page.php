@@ -66,7 +66,7 @@
 						<span class="comments-blog"><a href="<?php comments_link(); ?>"><?php comments_number('0 comentário', 'Um comentário', '% comentários'); ?></a></span>						
 					</div>
 				</article>	
-			<?php endforeach; ?>					
+			<?php endforeach; wp_reset_postdata(); ?>					
 		</div>	
 	</section>			
 
@@ -78,9 +78,9 @@
 
 		<ul class="customers-box">
 			<?php while ( have_rows('clientes_lista') ) : the_row(); ?>
-				<li class="customers-item"><a href="javascript:;"><img src="<?php the_sub_field( 'cliente_logomarca' ); ?>" alt="Vimeo"></a></li>
-			<?php endwhile; wp_reset_postdata();?> 	
-		</ul>
+				<li class="customers-item"><a href="javascript:;"><img src="<?php the_sub_field( 'cliente_logomarca' ); ?>"></a></li>
+			<?php endwhile; wp_reset_postdata();?> 			 			
+		</ul>		
 	</section>		
 </main> 
 
