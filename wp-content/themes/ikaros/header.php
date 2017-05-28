@@ -25,7 +25,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="<?php echo site_url(); ?>"><img class="logo" src="<?php bloginfo( 'template_url' ); ?>/assets/images/logotypes/logo-ikarus.png" alt="Ikarus"></a>
+                    <a href="<?php echo site_url(); ?>"><img class="logo" src="<?php bloginfo( 'template_url' ); ?>/assets/images/logotypes/logo-ikaros.png" alt="Ikarus"></a>
                 </div><!-- end navbar-header -->
 
                 <!-- Header Navigation -->
