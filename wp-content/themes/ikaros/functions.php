@@ -6,6 +6,9 @@ require get_template_directory() . '/inc/add-theme-suport.php';
 // Limit number of characters
 require get_template_directory() . '/inc/change-text-size.php';
 
+// Customiza o painel de login -> Logo, Título e url
+require get_template_directory() . '/inc/customize-login-admin.php';
+
 // Custom Post Thumbnail
 require get_template_directory() . '/inc/custom-post-thumbnail.php';
 
